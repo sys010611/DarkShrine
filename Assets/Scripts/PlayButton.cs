@@ -12,6 +12,9 @@ public class PlayButton : MonoBehaviour
 
     void Awake()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         btn = GetComponent<Button>();
 
         if (btn != null)

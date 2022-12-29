@@ -43,12 +43,10 @@ public class Player : MonoBehaviour
     {
         if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hit, maxDistance, layermask))
         {
-            Debug.Log("SafeZone");
             outsideFlag = false;
         }
         else
         {
-            Debug.Log("°¨Áöx");
             outsideFlag = true;
             StartCoroutine("CheckLocation");
         }

@@ -9,10 +9,6 @@ public class Enemy : MonoBehaviour
     public float speed = 4f;
     public Player player;
 
-    void Awake()
-    {
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,7 +35,6 @@ public class Enemy : MonoBehaviour
     void GameQuit()
     {
         SceneManager.LoadScene("GameOver");
-        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }
 

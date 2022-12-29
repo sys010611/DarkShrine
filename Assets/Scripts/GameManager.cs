@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private void Start() //setting 3 bells, 3 monkeys
     {
+        Cursor.lockState = CursorLockMode.Locked; //lock cursor
+
         //shuffle array
         for (int j = 0; j < 8; j++)
         {
@@ -77,8 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDetected()
     {
-        Debug.Log("Detected");
-        enemy.speed = 20;
+        enemy.speed = 8f;
     }
 
     public void PlayerNotDetected()

@@ -13,6 +13,8 @@ public class GameOver : MonoBehaviour
     {
         image = transform.GetChild(2).GetComponent<Image>();
         Cursor.visible= true;
+        Cursor.lockState = CursorLockMode.None;
+        image.CrossFadeAlpha(0f, 1f, false);
     }
 
     // Update is called once per frame
@@ -26,11 +28,8 @@ public class GameOver : MonoBehaviour
 
     IEnumerator ToTitle()
     {
-        for (byte i = 0; i < 255; i++)
-        {
-            image.color = new Color32(0, 0, 0, i);
-            yield return new WaitForSeconds(0.001f);
-        }
+        image.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Intro");
     }
 }

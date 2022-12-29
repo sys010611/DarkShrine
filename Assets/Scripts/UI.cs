@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     GameObject bell3;
     Text barrierDisabled;
     Text [] texts;
+    GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,13 +22,24 @@ public class UI : MonoBehaviour
         bell2 = bells.GetChild(1).gameObject;
         bell3 = bells.GetChild(2).gameObject;
 
-        texts = GetComponentsInChildren<Text>();   
+        texts = GetComponentsInChildren<Text>();
+
+        pauseMenu = transform.GetChild(6).gameObject;
     }
 
     void Start()
     {
         texts[4].color = new Color(1, 1, 1, 1);
         StartCoroutine("StartMessageFadeOut", texts[4]);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            pauseMenu.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public void BellCountChanged()

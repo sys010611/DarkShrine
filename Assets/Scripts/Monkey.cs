@@ -19,6 +19,6 @@ public class Monkey : MonoBehaviour
 
     void Inactive()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
