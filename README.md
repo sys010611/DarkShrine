@@ -1,1 +1,1 @@
-# scripts in asset/script
+# scripts in Assets/script
