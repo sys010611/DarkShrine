@@ -1,1 +1,1 @@
-# scripts in Assets/Scripts
+Simple Horror Game
